@@ -148,7 +148,7 @@ class Admin extends CI_Controller
 				$aksi = $this->db->insert('anggota', $data);
 
 				if ($aksi == TRUE) {
-					$this->session->set_flashdata('message', '<div class="alert alert-success col-7" role="alert">Data Berhasil Di Tambahkan!</div>');
+					$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Data Berhasil Di Tambahkan!</div>');
 					redirect('Admin/tambah_anggota');
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Data Gagall Disimpan!</div>');
