@@ -136,6 +136,7 @@ class Admin extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$this->edit_anggota($id);
 		} else {
+
 			$nama = $this->input->post('nama');
 			$prodi = $this->input->post('prodi');
 			$jabatan = $this->input->post('jabatan');
@@ -161,7 +162,6 @@ class Admin extends CI_Controller
 
 
 				$data = array(
-					'id' => $id,
 					'gambar' => $gambar['gambar']['file_name'],
 					'nama'	=> $nama,
 					'prodi' => $prodi,
@@ -169,8 +169,8 @@ class Admin extends CI_Controller
 					'jabatan' => $jabatan
 
 				);
-
 				$this->db->set($data);
+				$this->db->where('id', ['id' => $id]);
 				$aksi = $this->db->update('anggota');
 
 				if ($aksi == TRUE) {
