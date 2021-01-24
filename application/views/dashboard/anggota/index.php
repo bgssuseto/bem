@@ -38,7 +38,7 @@
                      <tbody>
                          <?php foreach ($p_anggota->result_array() as $row) : ?>
                              <tr>
-                                 <td><img src="<?= base_url() . $row['gambar']; ?>" style="width: 90px; height:auto;" alt=""></td>
+                                 <td><img src="<?= base_url('assets/img/team/') . $row['gambar']; ?>" style="width: 90px; height:auto;" alt=""></td>
                                  <td><?= $row['nama']; ?></td>
                                  <td><?= $row['prodi']; ?></td>
                                  <td><?= $row['departemen']; ?></td>

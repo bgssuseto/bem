@@ -125,8 +125,9 @@ class Admin extends CI_Controller
 		$this->load->view('templates/adm_footer');
 	}
 
-	public function update_angg($id)
+	public function update_angg($id = array('id' => $id))
 	{
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('prodi', 'Prodi', 'required|trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
@@ -221,7 +222,6 @@ class Admin extends CI_Controller
 			} else {
 				$gambar = array('gambar' => $this->upload->data());
 
-
 				$data = array(
 					'gambar' => $gambar['gambar']['file_name'],
 					'nama'	=> $nama,
@@ -314,10 +314,10 @@ class Admin extends CI_Controller
 
 		$aksi =  $this->M_data->inbox_del();
 		if ($aksi == false) {
-			$this->session->set_flashdata('message', '<div class="alert alert-success col-7" role="alert">Semua Pesan Berhasil Dihapus!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Semua Pesan Berhasil Dihapus!</div>');
 			redirect('Admin/liat_pesan');
 		} else {
-			$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Pesan Gagal Dihapus!</div>');
+			$this->session->set_flashdata('message', '<div class="alert alert-danger col-4" role="alert">Pesan Gagal Dihapus!</div>');
 			redirect('Admin/liat_pesan');
 		}
 	}
