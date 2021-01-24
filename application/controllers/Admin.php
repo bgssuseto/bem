@@ -20,6 +20,25 @@ class Admin extends CI_Controller
 		}
 	}
 
+	public function backupdb()
+	{
+		$this->load->dbutil();
+
+		$rule = array(
+			'format' => "zip",
+			'file_name' => "my_db_backup.sql"
+		);
+
+		$backup = $this->dbutil->backup($rule);
+		$db_name = 'backup-on-' . date("Y-m-d-H-i-s") . '.zip';
+		$savedb = '/assets/backup/db/' . $db_name;
+
+		$this->load->helper('file');
+		write_file($db_name, $backup);
+		$this->load->helper('download');
+		force_download($db_name, $backup);
+	}
+
 	public function index()
 	{
 
@@ -95,8 +114,75 @@ class Admin extends CI_Controller
 		$this->load->view('dashboard/anggota/form');
 		$this->load->view('templates/adm_footer');
 	}
+	public function edit_anggota($id)
+	{
+
+		$data['row'] = $this->M_anggota->edit_angg($id);
+		$data['judul'] = 'Edit Data - Anggota';
+		$this->load->view('templates/adm_header', $data);
+		$this->load->view('templates/sidebartop');
+		$this->load->view('dashboard/anggota/edit_anggota', $data);
+		$this->load->view('templates/adm_footer');
+	}
+
+	public function update_angg($id)
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+		$this->form_validation->set_rules('prodi', 'Prodi', 'required|trim');
+		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
+		$this->form_validation->set_rules('departemen', 'Departemen', 'required|trim');
 
 
+		if ($this->form_validation->run() == false) {
+			$this->edit_anggota($id);
+		} else {
+			$nama = $this->input->post('nama');
+			$prodi = $this->input->post('prodi');
+			$jabatan = $this->input->post('jabatan');
+			$departemen = $this->input->post('departemen');
+			$id = $this->input->post('id');
+			$config['upload_path']          = './assets/img/team/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			$config['max_size']             = 2000;
+			$config['overwrite']			= TRUE;
+			//$config['max_width']            = 1024;
+			//$config['max_height']           = 768;
+
+
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+
+
+			if (!$this->upload->do_upload('gambar')) {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Foto Gagal Di Unggah!</div>');
+				redirect('Admin/edit_anggota');
+			} else {
+				$gambar = array('gambar' => $this->upload->data());
+
+
+				$data = array(
+					'id' => $id,
+					'gambar' => $gambar['gambar']['file_name'],
+					'nama'	=> $nama,
+					'prodi' => $prodi,
+					'departemen' => $departemen,
+					'jabatan' => $jabatan
+
+				);
+
+				$this->db->set($data);
+				$aksi = $this->db->update('anggota');
+
+				if ($aksi == TRUE) {
+					$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Data Berhasil Di Update!</div>');
+					redirect('Admin/tambah_anggota');
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Data Gagall Di Update!</div>');
+					redirect('Admin/tambah_anggota');
+				}
+			}
+		}
+	}
 
 
 

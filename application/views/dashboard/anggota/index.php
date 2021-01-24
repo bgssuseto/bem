@@ -44,7 +44,7 @@
                                  <td><?= $row['departemen']; ?></td>
                                  <td><?= $row['jabatan']; ?></td>
                                  <td>
-                                     <a href="#" class="btn btn-info btn-sm"><i class="fas fa-user-edit"></i></a>
+                                     <a href="<?= base_url('Admin/edit_anggota/' . $row['id']) ?>" class="btn btn-info btn-sm"><i class="fas fa-user-edit"></i></a>
                                      <a href="<?= base_url('Admin/hapus_anggota/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                  </td>
                              </tr>
