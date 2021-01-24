@@ -96,13 +96,19 @@ class Admin extends CI_Controller
 		$this->load->view('templates/adm_footer');
 	}
 
+
+
+
+
+
+
 	public function aksi_anggota()
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('prodi', 'Prodi', 'required|trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required|trim');
 		$this->form_validation->set_rules('departemen', 'Departemen', 'required|trim');
-		$this->form_validation->set_rules('gambar\ddeq44', 'Foto Diri', 'required|trim');
+
 
 		if ($this->form_validation->run() == false) {
 			$this->tambah_anggota();
@@ -111,26 +117,44 @@ class Admin extends CI_Controller
 			$prodi = $this->input->post('prodi');
 			$jabatan = $this->input->post('jabatan');
 			$departemen = $this->input->post('departemen');
-			$file = $_FILES['gambar'];
+			$config['upload_path']          = './assets/img/team/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			$config['max_size']             = 2000;
+			$config['overwrite']			= TRUE;
+			//$config['max_width']            = 1024;
+			//$config['max_height']           = 768;
 
-			if ($this->upload->do_upload('gambar')) {
-				$foto = $this->upload->data($file);
+
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+
+
+			if (!$this->upload->do_upload('gambar')) {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Foto Gagal Di Unggah!</div>');
+				redirect('Admin/tambah_anggota');
 			} else {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger col-3" role="alert">Foto Gagal Di Upload!</div>');
-				redirect('Admin/anggota');
+				$gambar = array('gambar' => $this->upload->data());
+
+
+				$data = array(
+					'gambar' => $gambar['gambar']['file_name'],
+					'nama'	=> $nama,
+					'prodi' => $prodi,
+					'departemen' => $departemen,
+					'jabatan' => $jabatan
+
+				);
+
+				$aksi = $this->db->insert('anggota', $data);
+
+				if ($aksi == TRUE) {
+					$this->session->set_flashdata('message', '<div class="alert alert-success col-7" role="alert">Data Berhasil Di Tambahkan!</div>');
+					redirect('Admin/tambah_anggota');
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Data Gagall Disimpan!</div>');
+					redirect('Admin/tambah_anggota');
+				}
 			}
-
-			$data = array(
-				'nama' => $nama,
-				'prodi' => $prodi,
-				'jabatan' => $jabatan,
-				'departemen' => $departemen,
-				'gambar' => $foto
-			);
-
-			$this->M_anggota->anggota();
-			redirect('Admin/tambah_anggota');
-			$this->session->set_flashdata('message', '<div class="alert alert-success col-3" role="alert">Data Berhasil Ditambahkan!</div>');
 		}
 	}
 

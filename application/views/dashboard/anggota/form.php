@@ -12,7 +12,8 @@
 		<div class="card-body">
 			<h5 style="margin-left: 12px; padding-bottom:10px;">Silahkan Isi Data Anggota BEM</h5>
 			<?= $this->session->flashdata('message'); ?>
-			<form action="<?= base_url('admin/aksi_anggota') ?>" method="POST" enctype="multipart/form-data">
+			<?= form_open_multipart('Admin/aksi_anggota')  ?>
+			<form " method=" POST" enctype="multipart/form-data">
 				<div class="form-group col-md-6">
 					<label for="nama">Nama</label>
 					<input type="text" name="nama" class="form-control" placeholder="Nama...">
@@ -25,8 +26,8 @@
 				</div>
 
 				<div class="form-group form-group col-md-6">
-					<label for="bulan">Prodi</label>
-					<select id="bulan" name="prodi" class="form-control">
+					<label for="prodi">Prodi</label>
+					<select id="prodi" name="prodi" class="form-control">
 						<option value="" readonly;>- Silahkan Pilih -</option>
 						<option value="Teknik Informatika">Teknik Informatika</option>
 						<option value="Teknik Industri">Teknik Industri</option>
@@ -38,11 +39,11 @@
 				</div>
 
 				<div class="form-group form-group col-md-6">
-					<label for="bulan">Departemen</label>
-					<input type="text" name="jabatan" class="form-control" placeholder="Departemen...">
+					<label for="departemen">Departemen</label>
+					<input type="text" name="departemen" class="form-control" placeholder="Departemen...">
 					<div class="form-group pt-3" style="padding-bottom:10px;">
 						<label for="exampleFormControlFile1">Foto Diri</label>
-						<input type="file" class="form-control-file" name="gambar" id="exampleFormControlFile1">
+						<input type="file" class="form-control-file" name="gambar" id="gambar" size="30">
 						<?= form_error('gambar', '<small class="text-danger pl-3">', '</small>') ?>
 					</div>
 				</div>

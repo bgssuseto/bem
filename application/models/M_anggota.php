@@ -10,11 +10,4 @@ class M_anggota extends CI_Model
 	{
 		$this->db->delete('anggota', array('id' => $id));
 	}
-
-	function anggota($data)
-	{
-		$this->db->insert('anggota', $data);
-		var_dump($this->db->insert('anggota', $data));
-		die();
-	}
 }
