@@ -34,6 +34,20 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item">
+				<a class="nav-link collapsed" href="<?= base_url('Auth/custom') . $row['id']; ?>">
+					<i class="fas fa-cogs"></i>
+					<span>Customize Website</span>
+				</a>
+
+			</li>
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="<?= base_url('Admin/liat_pesan') ?>">
+					<i class="fas fa-envelope"></i>
+					<span>Pesan Masuk</span>
+				</a>
+
+			</li>
+			<li class="nav-item">
 				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 					<i class="fas fa-fw fa-newspaper"></i>
 					<span>Berita</span>
@@ -45,14 +59,6 @@
 
 					</div>
 				</div>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link collapsed" href="<?= base_url('Admin/liat_pesan') ?>">
-					<i class="fas fa-envelope"></i>
-					<span>Pesan Masuk</span>
-				</a>
-
 			</li>
 
 			<!-- Nav Item - Utilities Collapse Menu -->
