@@ -34,7 +34,7 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="<?= base_url('Auth/custom') . $row['id']; ?>">
+				<a class="nav-link collapsed" href="<?= base_url('Auth/custom') ?>">
 					<i class="fas fa-cogs"></i>
 					<span>Customize Website</span>
 				</a>

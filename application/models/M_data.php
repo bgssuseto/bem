@@ -7,6 +7,12 @@ class M_data extends CI_Model
 		$this->db->order_by('id', 'ASC');
 	}
 
+	public function tampil_slide($id)
+	{
+		return $this->db->get_where('slide', ['id' => $id])->row_array();
+		$this->db->limit(1);
+	}
+
 	public function berita()
 	{
 		return $this->db->get('pengumuman')->result_array();
@@ -24,11 +30,6 @@ class M_data extends CI_Model
 	{
 
 		$this->db->delete('inbox', array('id_pesan' => $id));
-	}
-
-	function get_custom($id)
-	{
-		return $this->db->get_where('slide', array('id' => $id))->row_array();
 	}
 
 	function inbox_del()

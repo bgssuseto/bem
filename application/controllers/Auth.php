@@ -13,6 +13,7 @@ class Auth extends CI_Controller
 	public function index()
 	{
 		$data['anggota'] = $this->M_data->tampil_anggota();
+		$data['row'] = $this->M_data->tampil_slide();
 		$data['berita'] = $this->M_data->berita();
 		$this->load->view('templates/header');
 		$this->load->view('Auth/index', $data);
@@ -22,14 +23,17 @@ class Auth extends CI_Controller
 	public function custom($id)
 	{
 		$data['judul'] = 'Customize Website - Admin';
-		$data['row'] = $this->M_data->get_custom($id);
+
+		$data['row'] = $this->M_data->tampil_slide($id);
 		$this->load->view('templates/adm_header', $data);
 		$this->load->view('templates/sidebartop');
-		$this->load->view('dashboard/custom/index');
+		$this->load->view('dashboard/custom/index', $data);
 		$this->load->view('templates/adm_footer');
 	}
 
-	public function update_slide($id)
+
+
+	public function create_slide()
 	{
 		$this->form_validation->set_rules('judul', 'Judul', 'required|trim');
 		$this->form_validation->set_rules('konten', 'Konten', 'required|trim');
@@ -37,7 +41,7 @@ class Auth extends CI_Controller
 
 
 		if ($this->form_validation->run() == false) {
-			$this->custom($id);
+			$this->custom();
 		} else {
 			$judul = $this->input->post('judul');
 			$slide = $this->input->post('konten');
@@ -68,7 +72,7 @@ class Auth extends CI_Controller
 
 				);
 
-				$aksi = $this->db->update($id, $data);
+				$aksi = $this->db->insert($data);
 
 				if ($aksi == TRUE) {
 					$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Kustomisasi Berhasil Di Ubah !</div>');

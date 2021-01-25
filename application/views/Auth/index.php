@@ -28,14 +28,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-					<h1 data-aos="fade-up">TECHNO CAMP 2020</h1>
-					<h2 data-aos="fade-up" data-aos-delay="400">Technocamp adalah sebuah ajang kreativitas mahasiswa yang meliputi lomba - lomba dan pentas karya seni</h2>
+
+					<h1 data-aos="fade-up"><?= $row['judul'] ?></h1>
+					<h2 data-aos="fade-up" data-aos-delay="400"><?= $row['slide'] ?></h2>
 					<div data-aos="fade-up" data-aos-delay="800">
 						<a href="<?= base_url() ?>" class="btn-get-started scrollto">Mulai Sekarang !</a>
 					</div>
 				</div>
 				<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-					<img src="<?= base_url() ?>assets/img/tclogo.png" class="img-fluid animated" alt="">
+					<img src="<?= base_url('./assets/img/slide/') . $row['gambar']  ?> " class="img-fluid animated" alt="">
 				</div>
 			</div>
 		</div>
