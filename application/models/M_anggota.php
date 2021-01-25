@@ -16,4 +16,10 @@ class M_anggota extends CI_Model
 
 		return $this->db->get_where('anggota', array('id' => $id))->row_array();
 	}
+
+	function aksi_update($id, $data)
+	{
+		$this->db->set($data);
+		return $this->db->update('anggota', array('id' => $id));
+	}
 }

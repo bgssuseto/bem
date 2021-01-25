@@ -125,7 +125,7 @@ class Admin extends CI_Controller
 		$this->load->view('templates/adm_footer');
 	}
 
-	public function update_angg($id = array('id' => $id))
+	public function update_angg($id)
 	{
 
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -136,13 +136,14 @@ class Admin extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 			$this->edit_anggota($id);
+			$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Gagal Mengambil Data Anggota!</div>');
 		} else {
 
 			$nama = $this->input->post('nama');
 			$prodi = $this->input->post('prodi');
 			$jabatan = $this->input->post('jabatan');
 			$departemen = $this->input->post('departemen');
-			$id = $this->input->post('id');
+
 			$config['upload_path']          = './assets/img/team/';
 			$config['allowed_types']        = 'gif|jpg|png';
 			$config['max_size']             = 2000;
@@ -157,12 +158,12 @@ class Admin extends CI_Controller
 
 			if (!$this->upload->do_upload('gambar')) {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Foto Gagal Di Unggah!</div>');
-				redirect('Admin/edit_anggota');
+				$this->edit_anggota($id);
 			} else {
 				$gambar = array('gambar' => $this->upload->data());
 
-
 				$data = array(
+					'id' => $id,
 					'gambar' => $gambar['gambar']['file_name'],
 					'nama'	=> $nama,
 					'prodi' => $prodi,
@@ -170,16 +171,15 @@ class Admin extends CI_Controller
 					'jabatan' => $jabatan
 
 				);
-				$this->db->set($data);
-				$this->db->where('id', ['id' => $id]);
-				$aksi = $this->db->update('anggota');
 
+
+				$aksi = $this->M_anggota->aksi_update($id, $data);
 				if ($aksi == TRUE) {
 					$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Data Berhasil Di Update!</div>');
-					redirect('Admin/tambah_anggota');
+					$this->edit_anggota($id);
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Data Gagall Di Update!</div>');
-					redirect('Admin/tambah_anggota');
+					$this->edit_anggota($id);
 				}
 			}
 		}

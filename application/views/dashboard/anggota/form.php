@@ -12,8 +12,8 @@
 		<div class="card-body">
 			<h5 style="margin-left: 12px; padding-bottom:10px;">Silahkan Isi Data Anggota BEM</h5>
 			<?= $this->session->flashdata('message'); ?>
-			<?= form_open_multipart('Admin/aksi_anggota')  ?>
-			<form " method=" POST" enctype="multipart/form-data">
+
+			<form action="<?= base_url('Admin/aksi_anggota') ?>" method="POST" enctype="multipart/form-data">
 				<div class="form-group col-md-6">
 					<label for="nama">Nama</label>
 					<input type="text" name="nama" class="form-control" placeholder="Nama...">

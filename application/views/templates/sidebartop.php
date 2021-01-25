@@ -9,9 +9,9 @@
 			<!-- Sidebar - Brand -->
 			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 				<div class="sidebar-brand-icon">
-					<i class="fas fa-bug"></i>
+					<i class="fas fa-book-reader"></i>
 				</div>
-				<div class="sidebar-brand-text mx-2" style="font-size: 20px;">BEM/ADMIN</div>
+				<div class="sidebar-brand-text mx-2" style="font-size: 20px;">BEM FT UMK</div>
 			</a>
 
 			<!-- Divider -->
