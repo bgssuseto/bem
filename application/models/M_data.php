@@ -7,10 +7,17 @@ class M_data extends CI_Model
 		$this->db->order_by('id', 'ASC');
 	}
 
-	public function tampil_slide($id)
+	public function tampil_slide()
 	{
-		return $this->db->get_where('slide', ['id' => $id])->row_array();
+		return $this->db->get_where('slide')->row_array();
 		$this->db->limit(1);
+	}
+
+	function delete_slide($id)
+	{
+		$row = $this->db->where(array('id' => $id))->get('slide')->row_array();
+		$this->db->delete('slide', array('id' => $id));
+		unlink('./assets/img/slide/' . $row['gambar']);
 	}
 
 	public function berita()

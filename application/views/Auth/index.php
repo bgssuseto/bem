@@ -90,7 +90,7 @@
 
 				<div class="row content">
 					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-						<center><img src="assets/img/kabinet.png" class="img-fluid " alt=""></center>
+						<center><img src="<?= base_url() ?>assets/img/kabinet.png" class="img-fluid " alt=""></center>
 						<p></p>
 						<h5 align="center">Kabinet Agni Prasanti</h5>
 						</br>
@@ -125,7 +125,7 @@
 				</div>
 
 				<div class="row" data-aos="fade-up" data-aos-delay="300">
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-4 col-md-4" style="padding-bottom: 10px;">
 						<div class="icon-box">
 							<img src="assets/img/departemen/psdm.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">PSDM</a></h3>
@@ -133,7 +133,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/sosmaspol.png" width="56px">
+							<img src="assets/img/departemen/sosmaspol.png" height="56px" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">SOSMASPOL</a></h3>
 						</div>
 					</div>
@@ -149,7 +149,7 @@
 							<h3 style="margin-left: 10px;"><a href="">PORA</a></h3>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4">
+					<div class="col-lg-4 col-md-4" style="padding-top: -7px;">
 						<div class="icon-box">
 							<img src="assets/img/departemen/medinfo.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">MEDINFO</a></h3>

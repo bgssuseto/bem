@@ -12,7 +12,7 @@
               theYear = theYear + 1900
             document.write(theYear)
           </script>
-          <strong>BEM FT UMK</strong> Made with <i class="icofont-heart-alt"></i>. All Rights Reserved
+          <strong>BEM FT UMK</strong> Made with <i class="icofont-heart-alt"></i> All Rights Reserved
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->

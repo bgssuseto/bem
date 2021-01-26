@@ -19,7 +19,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active">
-				<a class="nav-link" href="<?= base_url('Admin') ?>">
+				<a class="nav-link" href="<?= base_url('Admin/dashboard') ?>">
 					<i class="fas fa-fw fa-home"></i>
 					<span>Beranda</span></a>
 			</li>

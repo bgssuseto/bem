@@ -8,7 +8,9 @@ class M_anggota extends CI_Model
 
 	function hapus_angg($id)
 	{
+		$row = $this->db->where(array('id' => $id))->get('anggota')->row_array();
 		$this->db->delete('anggota', array('id' => $id));
+		unlink('./assets/img/team/' . $row['gambar']);
 	}
 
 	function edit_angg($id)

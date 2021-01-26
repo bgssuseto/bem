@@ -11,7 +11,7 @@
              <h6 class="m-0 font-weight-bold text-primary">Data Anggota</h6>
          </div>
          <div class="card-body">
-             <a href="<?= base_url('Admin/aksi_anggota') ?>" class="btn btn-primary mb-4">Tambah Data</a>
+             <a href="<?= base_url('Admin/tambah_anggota') ?>" class="btn btn-primary mb-4">Tambah Data</a>
              <?= $this->session->flashdata('message') ?>
              <div class="table-responsive">
                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

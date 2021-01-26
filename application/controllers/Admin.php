@@ -31,7 +31,7 @@ class Admin extends CI_Controller
 
 		$backup = $this->dbutil->backup($rule);
 		$db_name = 'backup-on-' . date("Y-m-d-H-i-s") . '.zip';
-		$savedb = '/assets/backup/db/' . $db_name;
+		$savedb = './assets/backup/db/' . $db_name;
 
 		$this->load->helper('file');
 		write_file($db_name, $backup);
