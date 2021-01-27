@@ -20,6 +20,14 @@ class Admin extends CI_Controller
 		}
 	}
 
+	public function error()
+	{
+		$data['judul'] = 'Error 404 - Admin';
+		$this->load->view('templates/adm_header', $data);
+		$this->load->view('errors/404');
+		$this->load->view('templates/adm_footer');
+	}
+
 	public function backupdb()
 	{
 		$this->load->dbutil();

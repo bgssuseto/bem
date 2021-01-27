@@ -55,7 +55,7 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Management Berita:</h6>
-						<a class="collapse-item" href="<?= base_url('Admin/berita') ?>">Berita</a>
+						<a class="collapse-item" href="<?= base_url('Admin/error'); ?>">Berita</a>
 
 					</div>
 				</div>
