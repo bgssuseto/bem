@@ -316,7 +316,7 @@ class Admin extends CI_Controller
 		}
 	}
 
-	public function berita()
+	public function add_berita()
 	{
 		$data['judul'] = 'Admin - Berita';
 

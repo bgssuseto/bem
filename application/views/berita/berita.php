@@ -37,6 +37,11 @@
                 <div class="form-group col-md-6" style="margin-top: 30px;">
                     <label for="nama">Tag Berita</label>
                     <input type="text" name="tag" class="form-control" required placeholder="Tag Berita...">
+                </div>
+
+                <div class="form-group col-md" style="padding-bottom:10px;">
+                    <label for="exampleFormControlFile1">Thumbnail Berita</label>
+                    <input type="file" class="form-control-file" name="gambar" id="gambar" required size="30">
 
                 </div>
 
