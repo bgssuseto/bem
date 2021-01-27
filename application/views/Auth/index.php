@@ -276,19 +276,19 @@
 						<form class="php-email-form" method="POST" action="<?= base_url('Admin/inbox') ?>">
 							<?= $this->session->flashdata('message') ?>
 							<div class="form-group">
-								<input type="text" name="nama" class="form-control" id="name" placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+								<input type="email" class="form-control" name="email" id="email" required placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subjek" id="subject" placeholder="Subjek" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+								<input type="text" class="form-control" name="subjek" id="subject" required placeholder="Subjek" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" name="pesan" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Pesan"></textarea>
+								<textarea class="form-control" name="pesan" rows="5" data-rule="required" required data-msg="Please write something for us" placeholder="Pesan"></textarea>
 								<div class="validate"></div>
 							</div>
 							<div class="mb-3">
