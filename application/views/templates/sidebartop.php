@@ -34,7 +34,7 @@
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item">
-				<a class="nav-link collapsed" href="<?= base_url('Auth/custom') ?>">
+				<a class="nav-link collapsed" href="<?= base_url('Admin/custom') ?>">
 					<i class="fas fa-cogs"></i>
 					<span>Customize Website</span>
 				</a>
@@ -55,7 +55,7 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Management Berita:</h6>
-						<a class="collapse-item" href="<?= base_url('Admin/error'); ?>">Berita</a>
+						<a class="collapse-item" href="<?= base_url('Admin/berita'); ?>">Berita</a>
 
 					</div>
 				</div>

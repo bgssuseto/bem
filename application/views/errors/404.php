@@ -11,7 +11,7 @@
 
      </div>
      <div class="text-center" style="margin-top: 10px;">
-         <a href="<?= base_url('admin/dashboard') ?>">&larr; Kembali Ke Dashboard</a>
+         <a href="<?= base_url('admin') ?>">&larr; Kembali Ke Portal Admin</a>
      </div>
 
  </div>

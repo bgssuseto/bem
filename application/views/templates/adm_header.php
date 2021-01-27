@@ -19,5 +19,6 @@
 	<link href="<?= base_url('assets'); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 	<!-- Custom styles for this template-->
 	<link href="<?= base_url('assets'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
+	<script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
 
 </head>

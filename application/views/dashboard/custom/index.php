@@ -13,7 +13,7 @@
 			<h5 style="margin-left: 12px; padding-bottom:10px;">Perbaharui Sekarang !</h5>
 			<?= $this->session->flashdata('message'); ?>
 
-			<form action="<?= base_url('Auth/create_slide') ?>" method="POST" enctype="multipart/form-data">
+			<form action="<?= base_url('Admin/create_slide') ?>" method="POST" enctype="multipart/form-data">
 
 				<div class="form-group col-md-7">
 					<label for="nama">Judul</label>
@@ -27,11 +27,13 @@
 					<?= form_error('konten', '<small class="text-danger pl-3">', '</small>') ?>
 				</div>
 
-				<label for="exampleFormControlFile1">Foto Jumbotron</label>
-				<input type="file" class="form-control-file" name="gambar" id="gambar" size="30" required>
-				<?= form_error('jumbotron', '<small class="text-danger pl-3">', '</small>') ?>
-				<div class="form-group col-md-4" style="margin-top:25px">
-					<button type="submit" class="btn btn-primary" style="margin-left: 12px; margin-bottom: 270px;">Unggah</button>
+				<div class="form-group col-md">
+					<label for="exampleFormControlFile1">Foto Jumbotron</label>
+					<input type="file" class="form-control-file" name="gambar" id="gambar" size="30" required>
+					<?= form_error('jumbotron', '<small class="text-danger pl-3">', '</small>') ?>
+				</div>
+				<div class="form-group col-md" style="margin-top:25px">
+					<button type=" submit" class="btn btn-primary" style="margin-bottom: 270px;">Unggah</button>
 				</div>
 				<table class="table" style="margin-top:-250px;">
 					<thead>
@@ -47,7 +49,7 @@
 							<th scope="row"><img src="<?= base_url('assets/img/slide/') . $row['gambar'] ?>" width="90" height="auto" alt=""></th>
 							<td><?= $row['judul'] ?></td>
 							<td><?= $row['slide'] ?></td>
-							<td><a href="<?= base_url('Auth/hapus_custom/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
+							<td><a href="<?= base_url('Admin/hapus_custom/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
 						</tr>
 					</tbody>
 				</table>
