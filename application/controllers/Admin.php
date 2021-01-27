@@ -220,6 +220,10 @@ class Admin extends CI_Controller
 
 				$data = array(
 					'gambar' => $gambar['gambar']['file_name'],
+					'instagram' => '#',
+					'fb' => '#',
+					'linkedin' => "#",
+					'tw' => '#',
 					'nama'	=> $nama,
 					'prodi' => $prodi,
 					'departemen' => $departemen,
