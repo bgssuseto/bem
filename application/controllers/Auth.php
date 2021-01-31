@@ -14,7 +14,6 @@ class Auth extends CI_Controller
 	{
 		$data['anggota'] = $this->M_data->tampil_anggota();
 		$data['row'] = $this->M_data->tampil_slide();
-		$data['berita'] = $this->M_data->berita();
 		$this->load->view('templates/header');
 		$this->load->view('Auth/index', $data);
 		$this->load->view('templates/footer');

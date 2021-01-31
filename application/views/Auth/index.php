@@ -213,20 +213,21 @@
 
 				<div class="row">
 
-					<?php
-					foreach ($berita as $result_berita) : ?>
 
-						<div class="col-md-6 mb-4 d-flex align-items-stretch">
-							<div class="card" style='background-image: url("adm/upload/berita/brt<?= $result_berita['gambar'] ?>");' data-aos="fade-up" data-aos-delay="100">
-								<div class="card-body">
-									<h5 class="card-title"><a href=""><?= $result_berita['judul'] ?></a></h5>
-									<p class="card-text"><?= substr($result_berita['isi'], 0, 85) ?>...</p>
-									<div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-								</div>
+
+					<div class="col-md-6 mb-4 d-flex align-items-stretch">
+						<div class="card" data-aos="fade-up" data-aos-delay="100">
+							<div class="card-body">
+								<h5 class="card-title"><a href="">
+										<< /a>
+								</h5>
+								<p class="card-text"></p>
+								<div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
 							</div>
 						</div>
+					</div>
 
-					<?php endforeach ?>
+
 
 				</div>
 		</section><!-- End More Services Section -->
@@ -276,19 +277,19 @@
 						<form class="php-email-form" method="POST" action="<?= base_url('Admin/inbox') ?>">
 							<?= $this->session->flashdata('message') ?>
 							<div class="form-group">
-								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Mohon isi nama kamu" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" name="email" id="email" required placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+								<input type="email" class="form-control" name="email" id="email" required placeholder="Email" data-rule="email" data-msg="Silahkan isi email yang valid" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subjek" id="subject" required placeholder="Subjek" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+								<input type="text" class="form-control" name="subjek" id="subject" required placeholder="Subjek" data-rule="minlen:4" data-msg="Silahkan isi subjek " />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" name="pesan" rows="5" data-rule="required" required data-msg="Please write something for us" placeholder="Pesan"></textarea>
+								<textarea class="form-control" name="pesan" rows="5" data-rule="required" required data-msg="Silahkan isi saran dan masukan mu untuk kami.." placeholder="Pesan"></textarea>
 								<div class="validate"></div>
 							</div>
 							<div class="mb-3">

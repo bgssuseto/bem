@@ -20,13 +20,6 @@ class M_data extends CI_Model
 		unlink('./assets/img/slide/' . $row['gambar']);
 	}
 
-	public function berita()
-	{
-		return $this->db->get('pengumuman')->result_array();
-		$this->db->order_by('id_pengumuman', 'ASC');
-		$this->db->limit(4);
-	}
-
 	function tampil_pesan()
 	{
 		return $this->db->get('inbox')->result_array();
