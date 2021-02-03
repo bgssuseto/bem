@@ -212,14 +212,11 @@
 				</div>
 
 				<div class="row">
-
-
-
 					<div class="col-md-6 mb-4 d-flex align-items-stretch">
 						<div class="card" data-aos="fade-up" data-aos-delay="100">
 							<div class="card-body">
 								<h5 class="card-title"><a href="">
-										<< /a>
+
 								</h5>
 								<p class="card-text"></p>
 								<div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
@@ -274,7 +271,7 @@
 					</div>
 
 					<div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-						<form class="php-email-form" method="POST" action="<?= base_url('Admin/inbox') ?>">
+						<form class="php-email-form" method="POST" action="<?= base_url('Auth/inbox') ?>">
 							<?= $this->session->flashdata('message') ?>
 							<div class="form-group">
 								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Mohon isi nama kamu" />
