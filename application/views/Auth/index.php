@@ -127,37 +127,37 @@
 				<div class="row" data-aos="fade-up" data-aos-delay="300">
 					<div class="col-lg-4 col-md-4" style="padding-bottom: 10px;">
 						<div class="icon-box">
-							<img src="assets/img/departemen/psdm.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/psdm.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">PSDM</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/sosmaspol.png" height="56px" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/sosmaspol.png" height="56px" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">SOSMASPOL</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/ristek.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/ristek.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">RISTEK</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/pora.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/pora.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">PORA</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4" style="padding-top: -7px;">
 						<div class="icon-box">
-							<img src="assets/img/departemen/medinfo.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/medinfo.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">MEDINFO</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/hublu.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/hublu.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">HUBLU</a></h3>
 						</div>
 					</div>
