@@ -1,4 +1,4 @@
-############################################### WEBSITE BEM FT 2021 BETA Release ####################################################
+############### WEBSITE BEM FT 2021 BETA Release #################
 
 ################# APA YANG BARU ?? #####################
 1. Penambahan Fungsi Kritik dan Saran
@@ -9,9 +9,6 @@
 7. Akses Website Yang Semakin Cepat
 
 
-#################################################################### CREDITS ##########################################################
+################# CREDITS ##################
 
-																										DEPARTEMEN KOMINFO BEM FAKULTAS TEKNIK 2021 
-																										
-																										
-																						
+DEPARTEMEN KOMINFO BEM FAKULTAS TEKNIK UNIVERSITAS MURIA KUDUS 2021
