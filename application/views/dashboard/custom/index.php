@@ -9,7 +9,7 @@
 		<div class="card-header py-3">
 			<h6 class="m-0 font-weight-bold text-primary">Update Data Anggota</h6>
 		</div>
-		<div class="card-body">
+		<div class="card-body" style="height: 750px;">
 			<h5 style="margin-left: 12px; padding-bottom:10px;">Perbaharui Sekarang !</h5>
 			<?= $this->session->flashdata('message'); ?>
 
@@ -32,27 +32,44 @@
 					<input type="file" class="form-control-file" name="gambar" id="gambar" size="30" required>
 					<?= form_error('jumbotron', '<small class="text-danger pl-3">', '</small>') ?>
 				</div>
-				<div class="form-group col-md" style="margin-top:25px">
-					<button type=" submit" class="btn btn-primary" style="margin-bottom: 270px;">Unggah</button>
+				<div class="form-group col-md" style="margin-top:25px;margin-bottom:-200px;">
+					<button type=" submit" class="btn btn-primary">Unggah</button>
 				</div>
-				<table class="table" style="margin-top:-250px;">
-					<thead>
-						<tr>
-							<th scope="col">Gambar</th>
-							<th scope="col">Judul</th>
-							<th scope="col">Konten</th>
-							<th scope="col">Aksi</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row"><img src="<?= base_url('assets/img/slide/') . $row['gambar'] ?>" width="90" height="auto" alt=""></th>
-							<td><?= $row['judul'] ?></td>
-							<td><?= $row['slide'] ?></td>
-							<td><a href="<?= base_url('Admin/hapus_custom/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
-						</tr>
-					</tbody>
-				</table>
+				<div class="table-responsive" style="margin-top: 240px;">
+					<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+						<thead>
+							<tr>
+								<th>Foto</th>
+								<th>Judul</th>
+								<th>Isi Konten</th>
+								<th style="width:65px;">Aksi</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th>Foto</th>
+								<th>Judul</th>
+								<th>Isi Konten</th>
+								<th style="width:65px;">Aksi</th>
+							</tr>
+						</tfoot>
+						<tbody>
+
+							<tr>
+								<td><img src="<?= base_url('assets/img/slide/') . $row['gambar']; ?>" style="width: 90px; height:auto;" alt=""></td>
+								<td><?= $row['judul']; ?></td>
+								<td><?= $row['slide']; ?></td>
+
+								<td>
+
+									<a href="<?= base_url('Admin/hapus_custom/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+								</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+				</div>
 			</form>
 		</div>
 	</div>

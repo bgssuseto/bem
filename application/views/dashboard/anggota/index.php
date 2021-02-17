@@ -22,7 +22,7 @@
                              <th>Prodi</th>
                              <th>Departemen</th>
                              <th>Jabatan</th>
-                             <th style="width:65px;">Aksi</th>
+                             <th style="width:95px;">Aksi</th>
                          </tr>
                      </thead>
                      <tfoot>
@@ -43,8 +43,8 @@
                                  <td><?= $row['prodi']; ?></td>
                                  <td><?= $row['departemen']; ?></td>
                                  <td><?= $row['jabatan']; ?></td>
-                                 <td>
-                                     <a href="<?= base_url('Admin/edit_anggota/' . $row['id']) ?>" class="btn btn-info btn-sm"><i class="fas fa-user-edit"></i></a>
+                                 <td style="text-align:center;">
+                                     <a href="<?= base_url('Admin/edit_anggota/' . $row['id']) ?>" style="margin-bottom:10px;" class="btn btn-info btn-sm"><i class="fas fa-user-edit"></i></a>
                                      <a href="<?= base_url('Admin/hapus_anggota/' . $row['id']) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                  </td>
                              </tr>

@@ -127,37 +127,37 @@
 				<div class="row" data-aos="fade-up" data-aos-delay="300">
 					<div class="col-lg-4 col-md-4" style="padding-bottom: 10px;">
 						<div class="icon-box">
-							<img src="assets/img/departemen/psdm.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/psdm.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">PSDM</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/sosmaspol.png" height="56px" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/sosmaspol.png" height="56px" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">SOSMASPOL</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/ristek.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/ristek.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">RISTEK</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/pora.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/pora.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">PORA</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4" style="padding-top: -7px;">
 						<div class="icon-box">
-							<img src="assets/img/departemen/medinfo.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/medinfo.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">MEDINFO</a></h3>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4">
 						<div class="icon-box">
-							<img src="assets/img/departemen/hublu.png" width="56px">
+							<img src="<?= base_url('') ?>assets/img/departemen/hublu.png" width="56px">
 							<h3 style="margin-left: 10px;"><a href="">HUBLU</a></h3>
 						</div>
 					</div>
@@ -212,21 +212,19 @@
 				</div>
 
 				<div class="row">
+					<div class="col-md-6 mb-4 d-flex align-items-stretch">
+						<div class="card" data-aos="fade-up" data-aos-delay="100">
+							<div class="card-body">
+								<h5 class="card-title"><a href="">
 
-					<?php
-					foreach ($berita as $result_berita) : ?>
-
-						<div class="col-md-6 mb-4 d-flex align-items-stretch">
-							<div class="card" style='background-image: url("adm/upload/berita/brt<?= $result_berita['gambar'] ?>");' data-aos="fade-up" data-aos-delay="100">
-								<div class="card-body">
-									<h5 class="card-title"><a href=""><?= $result_berita['judul'] ?></a></h5>
-									<p class="card-text"><?= substr($result_berita['isi'], 0, 85) ?>...</p>
-									<div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-								</div>
+								</h5>
+								<p class="card-text"></p>
+								<div class="read-more text-right"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
 							</div>
 						</div>
+					</div>
 
-					<?php endforeach ?>
+
 
 				</div>
 		</section><!-- End More Services Section -->
@@ -273,22 +271,22 @@
 					</div>
 
 					<div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-						<form class="php-email-form" method="POST" action="<?= base_url('Admin/inbox') ?>">
+						<form class="php-email-form" method="POST" action="<?= base_url('Auth/inbox') ?>">
 							<?= $this->session->flashdata('message') ?>
 							<div class="form-group">
-								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+								<input type="text" name="nama" class="form-control" id="name" required placeholder="Nama" data-rule="minlen:4" data-msg="Mohon isi nama kamu" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control" name="email" id="email" required placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+								<input type="email" class="form-control" name="email" id="email" required placeholder="Email" data-rule="email" data-msg="Silahkan isi email yang valid" />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subjek" id="subject" required placeholder="Subjek" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+								<input type="text" class="form-control" name="subjek" id="subject" required placeholder="Subjek" data-rule="minlen:4" data-msg="Silahkan isi subjek " />
 								<div class="validate"></div>
 							</div>
 							<div class="form-group">
-								<textarea class="form-control" name="pesan" rows="5" data-rule="required" required data-msg="Please write something for us" placeholder="Pesan"></textarea>
+								<textarea class="form-control" name="pesan" rows="5" data-rule="required" required data-msg="Silahkan isi saran dan masukan mu untuk kami.." placeholder="Pesan"></textarea>
 								<div class="validate"></div>
 							</div>
 							<div class="mb-3">
