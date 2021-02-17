@@ -346,10 +346,10 @@ class Admin extends CI_Controller
 		$aksi =  $this->M_data->delete_slide($id);
 		if ($aksi == FALSE) {
 			$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Data Berhasil Di Hapus !</div>');
-			redirect('Auth/custom');
+			redirect('Admin/custom');
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger col-4" role="alert">Data Gagal Di Hapus !</div>');
-			redirect('Auth/custom');
+			redirect('Admin/custom');
 		}
 	}
 
@@ -377,7 +377,7 @@ class Admin extends CI_Controller
 
 			if (!$this->upload->do_upload('gambar')) {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Foto Gagal Di Unggah!</div>');
-				redirect('Auth/custom');
+				redirect('Admin/custom');
 			} else {
 				$gambar = array('gambar' => $this->upload->data());
 
@@ -391,10 +391,10 @@ class Admin extends CI_Controller
 
 				if ($aksi == TRUE) {
 					$this->session->set_flashdata('message', '<div class="alert alert-success col-4" role="alert">Kustomisasi Berhasil Di Ubah !</div>');
-					redirect('Auth/custom');
+					redirect('Admin/custom');
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger col-7" role="alert">Kustomisasi Gagal Di Ubah !</div>');
-					redirect('Auth/custom');
+					redirect('Admin/custom');
 				}
 			}
 		}
